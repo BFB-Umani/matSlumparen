@@ -24,7 +24,6 @@ public class FoodDatabase {
     public void addToFoodList(Food food){
         if(food.isVegan()){
             veganFoodList.add(food);
-            normalFoodList.add(food);
         }
         normalFoodList.add(food);
     }
