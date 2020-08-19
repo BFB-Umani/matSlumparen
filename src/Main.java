@@ -3,11 +3,11 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Food food1 = new Food("Hot dog", false, Arrays.asList(Category.LUNCH, Category.DINNER));
-        Food food2 = new Food("Vegan burger", true, Arrays.asList(Category.LUNCH, Category.DINNER));
-        Food food3 = new Food("Apple pie", false, Arrays.asList(Category.DESSERT));
-        Food food4 = new Food("Tofu", true, Arrays.asList(Category.LUNCH, Category.DINNER));
-        Food food5 = new Food("FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT));
+        Food food1 = new Food(1,"Hot dog", false, Arrays.asList(Category.LUNCH, Category.DINNER), "");
+        Food food2 = new Food(2, "Vegan burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
+        Food food3 = new Food(3, "Apple pie", false, Arrays.asList(Category.DESSERT), "");
+        Food food4 = new Food(4, "Tofu", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
+        Food food5 = new Food(5, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), "");
 
         FoodDatabase foodDatabase = new FoodDatabase();
         foodDatabase.addToFoodList(food1);
@@ -126,4 +126,14 @@ public class Main {
 //    Food food9= new Food("Tiramisu med biff","Efterätt",true);
 //    Food food10= new Food("Bär","Efterätt",false);
 //    Food food11= new Food("Tiramisu","Efterätt",false);
+
+//            foodListVeg.add(new Food(1, "Vegansk lasagne", "https://www.mathem.se/recept/vegansk-lasagne", 2));
+//        foodListVeg.add(new Food(2, "Vegansk tomat- och purjolökspaj", "https://www.ica.se/recept/vegansk-tomat-och-purjolokspaj-723198/", 1));
+//        foodListVeg.add(new Food(3, "Vegansk kladdkaka", "https://www.tasteline.com/recept/vegansk-kladdkaka/", 3));
+//    }
+//
+//    public void initNonVegDB(){
+//        foodListNonVeg.add(new Food(4, "Lasagne", "https://www.arla.se/recept/lasagne/", 1));
+//        foodListNonVeg.add(new Food(5, "Penne vodka", "https://www.aftonbladet.se/matdryck/a/qLe41E/penne-vodka--pastaratten-med-sting", 2));
+//        foodListNonVeg.add(new Food(6, "Chokladmousse", "https://www.arla.se/recept/chokladmousse/", 3));
 }
