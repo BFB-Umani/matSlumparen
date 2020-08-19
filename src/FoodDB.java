@@ -21,6 +21,7 @@ public class FoodDB {
     }
 
     public Food shuffleListAndPickAVeganDish(int lunchDinnerDessert){
+        initVegDB();
         List<Food> filteredList = new ArrayList<>();
         for (Food food: foodListVeg
         ) {
@@ -31,7 +32,9 @@ public class FoodDB {
         Collections.shuffle(filteredList);
         return filteredList.get(0);
     }
+
     public Food shuffleListAndPickANonVeganDish(int lunchDinnerDessert){
+        initNonVegDB();
         List<Food> filteredList = new ArrayList<>();
         for (Food food: foodListNonVeg
              ) {
