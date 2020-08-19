@@ -31,9 +31,9 @@ public class FoodDatabase {
         return getFood(category, veganFoodList);
     }
 
-    private Food getFood(Category category, List<Food> veganFoodList) {
+    private Food getFood(Category category, List<Food> foodlist) {
         List<Food> filteredList = new ArrayList<>();
-        for (Food food: veganFoodList
+        for (Food food: foodlist
         ) {
             if(food.getCategories().contains(category)){
                 filteredList.add(food);
