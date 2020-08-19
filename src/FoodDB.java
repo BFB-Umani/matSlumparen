@@ -20,12 +20,26 @@ public class FoodDB {
         foodListNonVeg.add(new Food(6, "Chokladmousse", "https://www.arla.se/recept/chokladmousse/", "Dessert"));
     }
 
-    public Food shuffleListAndPickAVeganDish(){
-        Collections.shuffle(foodListVeg);
-        return foodListVeg.get(0);
+    public Food shuffleListAndPickAVeganDish(String lunchDinnerDessert){
+        List<Food> filteredList = new ArrayList<>();
+        for (Food food: foodListVeg
+        ) {
+            if(food.getLunchDinnerDessert().equalsIgnoreCase(lunchDinnerDessert)){
+                filteredList.add(food);
+            }
+        }
+        Collections.shuffle(filteredList);
+        return filteredList.get(0);
     }
-    public Food shuffleListAndPickANonVeganDish(){
-        Collections.shuffle(foodListNonVeg);
-        return foodListNonVeg.get(0);
+    public Food shuffleListAndPickANonVeganDish(String lunchDinnerDessert){
+        List<Food> filteredList = new ArrayList<>();
+        for (Food food: foodListNonVeg
+             ) {
+            if(food.getLunchDinnerDessert().equalsIgnoreCase(lunchDinnerDessert)){
+                filteredList.add(food);
+            }
+        }
+        Collections.shuffle(filteredList);
+        return filteredList.get(0);
     }
 }
