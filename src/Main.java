@@ -3,18 +3,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Food food1 = new Food(1,"Hot dog", false, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food2 = new Food(2, "Vegan burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food3 = new Food(3, "Apple pie", false, Arrays.asList(Category.DESSERT), "");
-        Food food4 = new Food(4, "Tofu", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food5 = new Food(5, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), "");
+    FoodDatabase foodDatabase=new FoodDatabase();
 
-        FoodDatabase foodDatabase = new FoodDatabase();
-        foodDatabase.addToFoodList(food1);
-        foodDatabase.addToFoodList(food2);
-        foodDatabase.addToFoodList(food3);
-        foodDatabase.addToFoodList(food4);
-        foodDatabase.addToFoodList(food5);
 
         boolean isVegan;
 
@@ -46,9 +36,9 @@ public class Main {
             if (input.trim().equalsIgnoreCase("lunch")) {
                 Food todaysLunch;
                 if (isVegan) {
-                    todaysLunch = getOneRandomVeganFoodfromACategory(Category.LUNCH, foodDatabase);
+                    todaysLunch = foodDatabase.shuffleListAndPickAVeganDish(Category.LUNCH);
                 } else {
-                    todaysLunch = getOneRandomNormalFoodfromACategory(Category.LUNCH, foodDatabase);
+                    todaysLunch = foodDatabase.shuffleListAndPickANonVeganDish(Category.LUNCH);
                 }
                 if (todaysLunch != null) {
                     System.out.println(todaysLunch.getName());
@@ -58,9 +48,9 @@ public class Main {
             } else if (input.trim().equalsIgnoreCase("dinner")) {
                 Food todaysDinner;
                 if (isVegan) {
-                    todaysDinner = getOneRandomVeganFoodfromACategory(Category.DINNER, foodDatabase);
+                    todaysDinner = foodDatabase.shuffleListAndPickAVeganDish(Category.DINNER);
                 } else {
-                    todaysDinner = getOneRandomNormalFoodfromACategory(Category.DINNER, foodDatabase);
+                    todaysDinner = foodDatabase.shuffleListAndPickANonVeganDish(Category.DINNER);
                 }
 
                 if (todaysDinner != null) {
@@ -71,9 +61,9 @@ public class Main {
             } else if (input.trim().equalsIgnoreCase("dessert")) {
                 Food todaysDessert;
                 if (isVegan) {
-                    todaysDessert = getOneRandomVeganFoodfromACategory(Category.DESSERT, foodDatabase);
+                    todaysDessert = foodDatabase.shuffleListAndPickAVeganDish(Category.DESSERT);
                 } else {
-                    todaysDessert = getOneRandomNormalFoodfromACategory(Category.DESSERT, foodDatabase);
+                    todaysDessert = foodDatabase.shuffleListAndPickANonVeganDish(Category.DESSERT);
                 }
 
                 if (todaysDessert != null) {
@@ -90,29 +80,6 @@ public class Main {
 
     }
 
-    public static Food getOneRandomVeganFoodfromACategory(Category category, FoodDatabase foodDatabase) {
-
-        List<Food> veganFoodList = foodDatabase.getVeganFoodList();
-        Collections.shuffle(veganFoodList);
-        for (Food veganFood : veganFoodList) {
-            if (veganFood.getCategories().contains(category)) {
-                return veganFood;
-            }
-        }
-        return null;
-    }
-
-    public static Food getOneRandomNormalFoodfromACategory(Category category, FoodDatabase foodDatabase) {
-
-        List<Food> normalFoodList = foodDatabase.getNormalFoodList();
-        Collections.shuffle(normalFoodList);
-        for (Food normalFood : normalFoodList) {
-            if (normalFood.getCategories().contains(category)) {
-                return normalFood;
-            }
-        }
-        return null;
-    }
 
 //    Food food= new Food("Köttbullar med potatismos","Middag",true);
 //    Food food1= new Food("kött Pizza","Middag",true);
