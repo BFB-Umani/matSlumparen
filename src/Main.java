@@ -1,4 +1,4 @@
-import java.security.cert.CollectionCertStoreParameters;
+
 import java.util.*;
 
 public class Main {
@@ -16,56 +16,73 @@ public class Main {
         foodDatabase.addToFoodList(food4);
         foodDatabase.addToFoodList(food5);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Are you a vegan?");
+        boolean isVegan;
 
-        String input = sc.nextLine();
-        if (input.trim().equalsIgnoreCase("yes")) {
-            System.out.println("Which meal do you want to cook? ");
-            input = sc.nextLine();
+        while (true) {
+
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Are you a vegan?");
+
+            String input = sc.nextLine();
+            if (input.trim().equalsIgnoreCase("yes")) {
+                isVegan = true;
+                break;
+            } else if (input.trim().equalsIgnoreCase("no")) {
+                isVegan = false;
+                break;
+            } else {
+                System.out.println("Please write yes or no.");
+            }
+
+        }
+
+
+        while (true) {
+
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Which meal do you want to cook? " + "\nLunch, dinner or dessert");
+
+            String input = sc.nextLine();
             if (input.trim().equalsIgnoreCase("lunch")) {
-                Food todaysLunch = getOneRandomVeganFoodfromACategory(Category.LUNCH, foodDatabase);
+                Food todaysLunch;
+                if (isVegan) {
+                    todaysLunch = getOneRandomVeganFoodfromACategory(Category.LUNCH, foodDatabase);
+                } else {
+                    todaysLunch = getOneRandomNormalFoodfromACategory(Category.LUNCH, foodDatabase);
+                }
                 if (todaysLunch != null) {
                     System.out.println(todaysLunch.getName());
                 }
-            }
+                break;
 
-            if (input.trim().equalsIgnoreCase("dinner")) {
-                Food todaysDinner = getOneRandomVeganFoodfromACategory(Category.DINNER, foodDatabase);
+            } else if (input.trim().equalsIgnoreCase("dinner")) {
+                Food todaysDinner;
+                if (isVegan) {
+                    todaysDinner = getOneRandomVeganFoodfromACategory(Category.DINNER, foodDatabase);
+                } else {
+                    todaysDinner = getOneRandomNormalFoodfromACategory(Category.DINNER, foodDatabase);
+                }
+
                 if (todaysDinner != null) {
                     System.out.println(todaysDinner.getName());
                 }
-            }
 
-            if (input.trim().equalsIgnoreCase("dessert")) {
-                Food todaysDessert = getOneRandomVeganFoodfromACategory(Category.DESSERT, foodDatabase);
+                break;
+            } else if (input.trim().equalsIgnoreCase("dessert")) {
+                Food todaysDessert;
+                if (isVegan) {
+                    todaysDessert = getOneRandomVeganFoodfromACategory(Category.DESSERT, foodDatabase);
+                } else {
+                    todaysDessert = getOneRandomNormalFoodfromACategory(Category.DESSERT, foodDatabase);
+                }
+
                 if (todaysDessert != null) {
                     System.out.println(todaysDessert.getName());
                 }
-            }
 
-        } else if (input.trim().equalsIgnoreCase("no")) {
-            System.out.println("Which meal do you want to cook? ");
-            input = sc.nextLine();
-            if (input.trim().equalsIgnoreCase("lunch")) {
-                Food todaysLunch = getOneRandomNormalFoodfromACategory(Category.LUNCH, foodDatabase);
-                if (todaysLunch != null) {
-                    System.out.println(todaysLunch.getName());
-                }
-            }
-
-            if (input.trim().equalsIgnoreCase("dinner")) {
-                Food todaysDinner = getOneRandomNormalFoodfromACategory(Category.DINNER, foodDatabase);
-                if (todaysDinner != null) {
-                    System.out.println(todaysDinner.getName());
-                }
-            }
-
-            if (input.trim().equalsIgnoreCase("dessert")) {
-                Food todaysDessert = getOneRandomNormalFoodfromACategory(Category.DESSERT, foodDatabase);
-                if (todaysDessert != null) {
-                    System.out.println(todaysDessert.getName());
-                }
+                break;
+            } else {
+                System.out.println("Please write lunch, dinner or dessert only.");
             }
 
         }
