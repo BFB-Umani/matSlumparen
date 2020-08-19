@@ -113,4 +113,17 @@ public class Main {
         }
         return null;
     }
+
+//    Food food= new Food("Köttbullar med potatismos","Middag",true);
+//    Food food1= new Food("kött Pizza","Middag",true);
+//    Food food2= new Food("Veganbullar med potatismos","Middag",false);
+//    Food food3= new Food("Pannkakor","Middag",false);
+//    Food food4= new Food("Salami macka","Frukost",true);
+//    Food food5= new Food("Pricki korv","Lunch",true);
+//    Food food6= new Food("macka med tartex","Lunch",false);
+//    Food food7= new Food("Gröt","Lunch",false);
+//    Food food8= new Food("gåslever","Efterätt",true);
+//    Food food9= new Food("Tiramisu med biff","Efterätt",true);
+//    Food food10= new Food("Bär","Efterätt",false);
+//    Food food11= new Food("Tiramisu","Efterätt",false);
 }
