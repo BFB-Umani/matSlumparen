@@ -1,8 +1,16 @@
 public class Food {
 
-    String name;
     int id;
+    String name;
     String linkToRecipe;
+    String lunchDinnerDessert;
+
+    public Food(int id, String name, String linkToRecipe, String lunchDinnerDessert) {
+        this.id = id;
+        this.name = name;
+        this.linkToRecipe = linkToRecipe;
+        this.lunchDinnerDessert = lunchDinnerDessert;
+    }
 
     public String getName() {
         return name;
@@ -26,5 +34,13 @@ public class Food {
 
     public void setLinkToRecipe(String linkToRecipe) {
         this.linkToRecipe = linkToRecipe;
+    }
+
+    public String getLunchDinnerDessert() {
+        return lunchDinnerDessert;
+    }
+
+    public void setLunchDinnerDessert(String lunchDinnerDessert) {
+        this.lunchDinnerDessert = lunchDinnerDessert;
     }
 }
