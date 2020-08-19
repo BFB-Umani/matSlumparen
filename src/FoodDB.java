@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class FoodDB {
@@ -18,4 +20,12 @@ public class FoodDB {
         foodListNonVeg.add(new Food(6, "Chokladmousse", "https://www.arla.se/recept/chokladmousse/", "Dessert"));
     }
 
+    public Food shuffleListAndPickAVeganDish(){
+        Collections.shuffle(foodListVeg);
+        return foodListVeg.get(0);
+    }
+    public Food shuffleListAndPickANonVeganDish(){
+        Collections.shuffle(foodListNonVeg);
+        return foodListNonVeg.get(0);
+    }
 }
