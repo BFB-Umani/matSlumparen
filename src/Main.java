@@ -91,4 +91,9 @@ public class Main {
 //        foodListNonVeg.add(new Food(5, "Penne vodka", "https://www.aftonbladet.se/matdryck/a/qLe41E/penne-vodka--pastaratten-med-sting", 2));
 //        foodListNonVeg.add(new Food(6, "Chokladmousse", "https://www.arla.se/recept/chokladmousse/", 3));
 
+    /*Food food6 = new Food(6, "Bibimbap", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.lazycatkitchen.com/vegan-bibimbap/");
+        Food food7 = new Food(7, "Chicken Ramen", false, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.forkknifeswoon.com/simple-homemade-chicken-ramen/");
+        Food food8 = new Food(8, "Pork Dumplings", false, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.thekitchn.com/how-to-make-pork-dumplings-cooking-lessons-from-the-kitchn-216163");
+        Food food9 = new Food(9, "Vegan kebab", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.veganfoodandliving.com/features/13-vegan-kebab-and-skewer-recipes-for-your-next-bbq-party/");
+        Food food10 = new Food(10, "Vegan Cheesecake", true, Arrays.asList(Category.DESSERT),"https://minimalistbaker.com/7-ingredient-vegan-cheesecakes/");*/
 }
