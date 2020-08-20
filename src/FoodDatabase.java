@@ -13,7 +13,9 @@ public class FoodDatabase {
         veganFoodList.add(new Food(2,"Tofu",true,Arrays.asList(Category.DINNER),""));
         veganFoodList.add(new Food(3, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), ""));
         veganFoodList.add(new Food(4,"Vegan Burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), ""));
-
+        veganFoodList.add(new Food(6, "Bibimbap", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.lazycatkitchen.com/vegan-bibimbap/"));
+        veganFoodList.add(new Food(9, "Vegan kebab", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.veganfoodandliving.com/features/13-vegan-kebab-and-skewer-recipes-for-your-next-bbq-party/"));
+        veganFoodList.add(new Food(10, "Vegan Cheesecake", true, Arrays.asList(Category.DESSERT),"https://minimalistbaker.com/7-ingredient-vegan-cheesecakes/"));
     }
 
     public void initMeatDb(){
@@ -22,6 +24,7 @@ public class FoodDatabase {
         normalFoodList.add(new Food(7,"Köttlimpa", false, Arrays.asList(Category.DINNER), ""));
         normalFoodList.add(new Food(8, "Apple pie", false, Arrays.asList(Category.DESSERT), ""));
         normalFoodList.add(new Food(9, "Tiramisu", false, Arrays.asList(Category.DESSERT), ""));
+        normalFoodList.add(new Food(8, "Pork Dumplings", false, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.thekitchn.com/how-to-make-pork-dumplings-cooking-lessons-from-the-kitchn-216163"));
 
     }
 

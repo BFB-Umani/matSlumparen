@@ -73,7 +73,7 @@ public class Main {
 //    Food food2= new Food("Veganbullar med potatismos","Middag",false);
 //    Food food3= new Food("Pannkakor","Middag",false);
 //    Food food4= new Food("Salami macka","Frukost",true);
-//    Food food5= new Food("Pricki korv","Lunch",true);
+//    Food food5= new Food("Pricki korv","Lunch",true);  VIKTIGT <-----------------------
 //    Food food6= new Food("macka med tartex","Lunch",false);
 //    Food food7= new Food("Gröt","Lunch",false);
 //    Food food8= new Food("gåslever","Efterätt",true);
@@ -84,16 +84,5 @@ public class Main {
 //            foodListVeg.add(new Food(1, "Vegansk lasagne", "https://www.mathem.se/recept/vegansk-lasagne", 2));
 //        foodListVeg.add(new Food(2, "Vegansk tomat- och purjolökspaj", "https://www.ica.se/recept/vegansk-tomat-och-purjolokspaj-723198/", 1));
 //        foodListVeg.add(new Food(3, "Vegansk kladdkaka", "https://www.tasteline.com/recept/vegansk-kladdkaka/", 3));
-//    }
-//
-//    public void initNonVegDB(){
-//        foodListNonVeg.add(new Food(4, "Lasagne", "https://www.arla.se/recept/lasagne/", 1));
-//        foodListNonVeg.add(new Food(5, "Penne vodka", "https://www.aftonbladet.se/matdryck/a/qLe41E/penne-vodka--pastaratten-med-sting", 2));
-//        foodListNonVeg.add(new Food(6, "Chokladmousse", "https://www.arla.se/recept/chokladmousse/", 3));
 
-    /*Food food6 = new Food(6, "Bibimbap", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.lazycatkitchen.com/vegan-bibimbap/");
-        Food food7 = new Food(7, "Chicken Ramen", false, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.forkknifeswoon.com/simple-homemade-chicken-ramen/");
-        Food food8 = new Food(8, "Pork Dumplings", false, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.thekitchn.com/how-to-make-pork-dumplings-cooking-lessons-from-the-kitchn-216163");
-        Food food9 = new Food(9, "Vegan kebab", true, Arrays.asList(Category.LUNCH, Category.DINNER),"https://www.veganfoodandliving.com/features/13-vegan-kebab-and-skewer-recipes-for-your-next-bbq-party/");
-        Food food10 = new Food(10, "Vegan Cheesecake", true, Arrays.asList(Category.DESSERT),"https://minimalistbaker.com/7-ingredient-vegan-cheesecakes/");*/
 }
