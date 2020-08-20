@@ -14,8 +14,6 @@ public class FoodDatabase {
         veganFoodList.add(new Food(3, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), ""));
         veganFoodList.add(new Food(4,"Vegan Burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), ""));
 
-        System.out.println("fork");
-        System.out.println("fork");
     }
 
     public void initMeatDb(){
@@ -27,26 +25,23 @@ public class FoodDatabase {
 
     }
 
-    public Food shuffleListAndPickAVeganDish(Category category){
-        initVegDB();
-        return getFood(category, veganFoodList);
-    }
+    public Food getRandomFoodFromCategory(Category category, FoodDatabase foodDatabase, Boolean isVegan) {
+        List<Food> foodList;
 
-    private Food getFood(Category category, List<Food> foodlist) {
-        List<Food> filteredList = new ArrayList<>();
-        for (Food food: foodlist
-        ) {
-            if(food.getCategories().contains(category)){
-                filteredList.add(food);
+        if(isVegan){
+            initVegDB();
+            foodList = getVeganFoodList();
+        } else{
+            initMeatDb();
+            foodList = getNormalFoodList();
+        }
+        Collections.shuffle(foodList);
+        for (Food food : foodList) {
+            if (food.getCategories().contains(category)) {
+                return food;
             }
         }
-        Collections.shuffle(filteredList);
-        return filteredList.get(0);
-    }
-
-    public Food shuffleListAndPickANonVeganDish(Category category){
-        initMeatDb();
-        return getFood(category, normalFoodList);
+        return null;
     }
 
 

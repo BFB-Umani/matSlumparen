@@ -35,7 +35,7 @@ public class Main {
             String input = sc.nextLine();
             if (input.trim().equalsIgnoreCase("lunch")) {
                 Food todaysLunch;
-                todaysLunch = getRandomFoodFromCategory(Category.LUNCH, foodDatabase, isVegan);
+                todaysLunch = foodDatabase.getRandomFoodFromCategory(Category.LUNCH, foodDatabase, isVegan);
                 if (todaysLunch != null) {
                     System.out.println(todaysLunch.getName());
                 }
@@ -43,7 +43,7 @@ public class Main {
 
             } else if (input.trim().equalsIgnoreCase("dinner")) {
                 Food todaysDinner;
-                todaysDinner = getRandomFoodFromCategory(Category.DINNER, foodDatabase, isVegan);
+                todaysDinner = foodDatabase.getRandomFoodFromCategory(Category.DINNER, foodDatabase, isVegan);
 
                 if (todaysDinner != null) {
                     System.out.println(todaysDinner.getName());
@@ -52,7 +52,7 @@ public class Main {
                 break;
             } else if (input.trim().equalsIgnoreCase("dessert")) {
                 Food todaysDessert;
-                todaysDessert = getRandomFoodFromCategory(Category.DESSERT, foodDatabase, isVegan);
+                todaysDessert = foodDatabase.getRandomFoodFromCategory(Category.DESSERT, foodDatabase, isVegan);
 
                 if (todaysDessert != null) {
                     System.out.println(todaysDessert.getName());
@@ -66,23 +66,6 @@ public class Main {
         }
 
 
-    }
-
-    public static Food getRandomFoodFromCategory(Category category, FoodDatabase foodDatabase, Boolean isVegan) {
-        List<Food> foodList;
-
-        if(isVegan){
-            foodList = foodDatabase.getVeganFoodList();
-        } else{
-            foodList = foodDatabase.getNormalFoodList();
-        }
-        Collections.shuffle(foodList);
-        for (Food food : foodList) {
-            if (food.getCategories().contains(category)) {
-                return food;
-            }
-        }
-        return null;
     }
 
 //    Food food= new Food("Köttbullar med potatismos","Middag",true);
