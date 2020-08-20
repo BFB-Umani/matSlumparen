@@ -14,7 +14,8 @@ public class FoodDatabase {
         veganFoodList.add(new Food(3, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), ""));
         veganFoodList.add(new Food(4,"Vegan Burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), ""));
 
-
+        System.out.println("fork");
+        System.out.println("fork");
     }
 
     public void initMeatDb(){
