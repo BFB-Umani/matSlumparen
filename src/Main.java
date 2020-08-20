@@ -2,20 +2,9 @@
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) {
-        Food food1 = new Food(1,"Hot dog", false, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food2 = new Food(2, "Vegan burger", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food3 = new Food(3, "Apple pie", false, Arrays.asList(Category.DESSERT), "");
-        Food food4 = new Food(4, "Tofu", true, Arrays.asList(Category.LUNCH, Category.DINNER), "");
-        Food food5 = new Food(5, "FruktSallad", true, Arrays.asList(Category.LUNCH, Category.DINNER, Category.DESSERT), "");
+    FoodDatabase foodDatabase=new FoodDatabase();
 
-        FoodDatabase foodDatabase = new FoodDatabase();
-        foodDatabase.addToFoodList(food1);
-        foodDatabase.addToFoodList(food2);
-        foodDatabase.addToFoodList(food3);
-        foodDatabase.addToFoodList(food4);
-        foodDatabase.addToFoodList(food5);
 
         boolean isVegan;
 
